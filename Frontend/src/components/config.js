@@ -1,0 +1,1 @@
+export const contractAdd="0x39e5634de124eD92b61edc1F3bd130026E596396";

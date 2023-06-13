@@ -1,0 +1,9 @@
+#myChart{
+    height: 60vh;
+    width: 60vw;
+    margin-top: -20px;
+    margin-left: -30px;
+}
+.stopBtn{
+    margin-left: 10vw;
+}

@@ -1,0 +1,22 @@
+.meter {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #FFF;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #F00 inset;
+    animation: meter-blink 1s ease-in-out infinite alternate;
+  }
+  
+  
+  @keyframes meter-blink {
+    0% {
+      box-shadow: 0 0 0 10px #F00 inset;
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(255, 0, 0, 0) inset;
+    }
+    100% {
+      box-shadow: 0 0 0 10px #F00 inset;
+    }
+  }

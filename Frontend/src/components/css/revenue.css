@@ -1,0 +1,28 @@
+.buyer-table {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #CCCCCC;
+  }
+  
+  th {
+    font-weight: bold;
+    background-color: #F5F5F5;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
