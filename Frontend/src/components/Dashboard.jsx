@@ -8,13 +8,18 @@ import Meter from './Meter';
 import Solar from './Solar';
 import Front from './Front';
 import Revenue from './Revenue';
+import EnergyPrediction from './EnergyPrediction';
+import Community from './Community/Community';
+import CarbonFootprint from './CarbonFootprint/CarbonFootprint';
+import ProfileComponent from './ProfileComponent';
 function Dashboard() {
   firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const [activeMenuItem, setActiveMenuItem] = useState('Dashboard');
-
+  const tradeHistory = [100, 150, 80, 120, 200]; // Example trade history
+  const consumptionHistory = [50, 60, 40, 55, 70]; // Example consumption history
   let content;
   switch (activeMenuItem) {
     case 'Dashboard':
@@ -27,7 +32,7 @@ function Dashboard() {
       content = <Meter />;
       break;
     case 'Settings':
-      content = <Work />;
+      content = <ProfileComponent/>;
       break;
     case 'solar':
       content = <Solar />;
@@ -35,6 +40,15 @@ function Dashboard() {
     case 'Revenue':
       content = <Revenue/>;
       break;
+    case 'Prediction':
+      content=<EnergyPrediction/>
+      break;
+    case 'Community':
+      content=<Community/>
+      break;
+    case 'Eco Score':
+      content=<CarbonFootprint tradeHistory={tradeHistory} consumptionHistory={consumptionHistory} />;
+      break ;
     default:
       content = <h1>Invalid menu item</h1>;
   }
@@ -112,6 +126,27 @@ function Dashboard() {
           >
             <FiUsers className="sidebar-menu-item-icon" size={24} />
             <span className="sidebar-menu-item-text">Simulation</span>
+          </li>
+          <li
+            className={`sidebar-menu-item ${activeMenuItem === 'Prediction' ? 'sidebar-menu-item-active' : ''}`}
+            onClick={() => handleMenuItemClick('Prediction')}
+          >
+            <FiUsers className="sidebar-menu-item-icon" size={24} />
+            <span className="sidebar-menu-item-text">Energy Prediction</span>
+          </li>
+          <li
+            className={`sidebar-menu-item ${activeMenuItem === 'Community' ? 'sidebar-menu-item-active' : ''}`}
+            onClick={() => handleMenuItemClick('Community')}
+          >
+            <FiUsers className="sidebar-menu-item-icon" size={24} />
+            <span className="sidebar-menu-item-text">Community</span>
+          </li>
+          <li
+            className={`sidebar-menu-item ${activeMenuItem === 'Eco Score' ? 'sidebar-menu-item-active' : ''}`}
+            onClick={() => handleMenuItemClick('Eco Score')}
+          >
+            <FiUsers className="sidebar-menu-item-icon" size={24} />
+            <span className="sidebar-menu-item-text">Eco Score</span>
           </li>
           <li
             className={`sidebar-menu-item ${activeMenuItem === 'Settings' ? 'sidebar-menu-item-active' : ''}`}
