@@ -1,6 +1,6 @@
 import { Chart } from 'chart.js';
 import React, { useState, useEffect } from 'react';
-import Blink from './blink';
+import Blink from './Blink';
 import Graph from './Graph';
 import firebase from 'firebase/compat/app';
 import EnergyTradingContract from '../EnergyTrading.json';
